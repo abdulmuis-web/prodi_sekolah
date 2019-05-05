@@ -1,0 +1,10 @@
+entity.prodi_sekolah.addProdiSekolah:
+#prodi_sekolah.prodi_sekolah_controller_addProdiSekolah:
+  path: '/kompetensi_keahlian/{kompetensi_keahlian}/add-prodi-sekolah'
+  defaults:
+    _controller: '\Drupal\prodi_sekolah\Controller\ProdiSekolahController::addProdiSekolah'
+    _title_callback: '\Drupal\prodi_sekolah\Controller\ProdiSekolahController::addPageTitle'
+  requirements:
+    _permission: 'access content'
+#  requirements:
+#    _profile_access_check: 'add'

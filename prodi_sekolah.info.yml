@@ -1,0 +1,8 @@
+name: 'Prodi Sekolah'
+type: module
+description: 'Daftar program studi yang dibuka oleh sekolah'
+core: 8.x
+package: 'PPDB'
+dependencies:
+  - kompetensi_keahlian
+  - pilihan_sekolah

@@ -1,0 +1,12 @@
+entity.prodi_sekolah.add_form:
+  route_name: entity.prodi_sekolah.add_form
+  title: 'Add Prodi sekolah'
+  appears_on:
+    - entity.prodi_sekolah.collection
+    - entity.prodi_sekolah.canonical
+
+entity.prodi_sekolah.addProdiSekolah:
+  route_name: entity.prodi_sekolah.addProdiSekolah
+  title: 'Daftarkan sebagai Prodi sekolah'
+  appears_on:
+    - entity.kompetensi_keahlian.canonical

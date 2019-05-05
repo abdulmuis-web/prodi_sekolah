@@ -1,0 +1,14 @@
+
+# Prodi sekolah menu items definition
+entity.prodi_sekolah.collection:
+  title: 'Prodi sekolah list'
+  route_name: entity.prodi_sekolah.collection
+  description: 'List Prodi sekolah entities'
+  parent: system.admin_structure
+  weight: 100
+
+prodi_sekolah.admin.structure.settings:
+  title: 'Prodi sekolah settings'
+  description: 'Configure Prodi sekolah entities'
+  route_name: prodi_sekolah.settings
+  parent: system.admin_structure

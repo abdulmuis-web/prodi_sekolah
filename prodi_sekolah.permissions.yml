@@ -1,0 +1,19 @@
+add prodi sekolah entities:
+  title: 'Create new Prodi sekolah entities'
+
+administer prodi sekolah entities:
+  title: 'Administer Prodi sekolah entities'
+  description: 'Allow to access the administration form to configure Prodi sekolah entities.'
+  restrict access: true
+
+delete prodi sekolah entities:
+  title: 'Delete Prodi sekolah entities'
+
+edit prodi sekolah entities:
+  title: 'Edit Prodi sekolah entities'
+
+view published prodi sekolah entities:
+  title: 'View published Prodi sekolah entities'
+
+view unpublished prodi sekolah entities:
+  title: 'View unpublished Prodi sekolah entities'

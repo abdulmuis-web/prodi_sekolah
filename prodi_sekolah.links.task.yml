@@ -1,0 +1,22 @@
+# Prodi sekolah routing definition
+prodi_sekolah.settings_tab:
+  route_name: prodi_sekolah.settings
+  title: 'Settings'
+  base_route: prodi_sekolah.settings
+
+entity.prodi_sekolah.canonical:
+  route_name: entity.prodi_sekolah.canonical
+  base_route: entity.prodi_sekolah.canonical
+  title: 'View'
+
+entity.prodi_sekolah.edit_form:
+  route_name: entity.prodi_sekolah.edit_form
+  base_route: entity.prodi_sekolah.canonical
+  title: 'Edit'
+
+entity.prodi_sekolah.delete_form:
+  route_name:  entity.prodi_sekolah.delete_form
+  base_route:  entity.prodi_sekolah.canonical
+  title: Delete
+  weight: 10
+

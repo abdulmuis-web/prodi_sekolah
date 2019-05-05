@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains prodi_sekolah.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function prodi_sekolah_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the prodi_sekolah module.
+    case 'help.page.prodi_sekolah':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Daftar program studi yang dibuka oleh sekolah') . '</p>';
+      return $output;
+
+    default:
+  }
+}

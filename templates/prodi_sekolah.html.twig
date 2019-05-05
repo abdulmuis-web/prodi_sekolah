@@ -1,0 +1,22 @@
+{#
+/**
+ * @file prodi_sekolah.html.twig
+ * Default theme implementation to present Prodi sekolah data.
+ *
+ * This template is used when viewing Prodi sekolah pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_prodi_sekolah()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('prodi_sekolah') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

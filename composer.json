@@ -1,0 +1,14 @@
+{
+  "name": "drupal/prodi_sekolah",
+  "type": "drupal-module",
+  "description": "Daftar program studi yang dibuka oleh sekolah",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/prodi_sekolah",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/prodi_sekolah",
+    "source": "http://cgit.drupalcode.org/prodi_sekolah"
+  },
+  "require": { }
+}
