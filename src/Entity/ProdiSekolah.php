@@ -255,6 +255,22 @@ class ProdiSekolah extends ContentEntityBase implements ProdiSekolahInterface {
         'weight' => -3,
       ]);
 
+    $fields['kuota'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Kuota'))
+      ->setDescription(t('The kuota of the ProdiSekolah entity'))
+      ->setDisplayOptions('view', array(
+          'label' => 'above',
+          'type' => 'integer',
+          'weight' => -2,
+      ))
+      ->setDisplayOptions('form', array(
+          'type' => 'number',
+          'weight' => -2,
+      ))
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
+
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
       ->setDescription(t('The time that the entity was created.'));

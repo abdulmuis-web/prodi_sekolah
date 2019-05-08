@@ -4,6 +4,7 @@ namespace Drupal\prodi_sekolah\Form;
 
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\prodi_sekolah\Entity\ProdiSekolah;
 
 /**
  * Form controller for Prodi sekolah edit forms.
@@ -45,13 +46,43 @@ class ProdiSekolahForm extends ContentEntityForm {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    /* @var $entity \Drupal\wilayah_indonesia_province\Entity\Province */		
 	parent::validateForm($form, $form_state);
 
     $entity = $this->entity;
+    
+	$values = $form_state->getValues();
+	if(is_null($entity->id())){
+	  $query = \Drupal::entityQuery('prodi_sekolah')
+			->range('0', '1');
 
-    if($this->getViolations($form_state)){
-	    $form_state->setErrorByName('kompetensi_keahlian_id',"Kompetensi keahlian tersebut sudah ada untuk sekolah yang dimaksud");
+	  $and = $query->andConditionGroup();
+	  $and->condition('kompetensi_keahlian_id', $form_state->getValue('kompetensi_keahlian_id')[0]['target_id']);
+	  $and->condition('pilihan_sekolah_id', $form_state->getValue('pilihan_sekolah_id')[0]['target_id']);
+
+	  $or = $query->orConditionGroup();
+	  $or->condition($and);
+
+
+	  $query->condition($or);
+	  
+	  
+	  $id = $query->execute();
+	  if(!empty($id)){
+	    $form_state->setErrorByName('code',"The code or name field already exist");
+	  }
+	}else{
+	  $id = \Drupal::entityQuery('prodi_sekolah')
+	        ->condition('kompetensi_keahlian_id', $form_state->getValue('kompetensi_keahlian_id')[0]['target_id'])
+	        ->condition('pilihan_sekolah_id', $form_state->getValue('pilihan_sekolah_id')[0]['target_id'])
+			->condition('id', $entity->id(), '!=')
+			->range('0', '1')
+			->execute();
+	  if(!empty($id)){
+		$prodi_sekolah = ProdiSekolah::load(reset($id));
+	    $form_state->setErrorByName('pilihan_sekolah_id',t("The Prodi sekolah with name @pilihan_sekolah_id and @kompetensi_keahlian_id already exist", 
+		                            array('@pilihan_sekolah_id' => $prodi_sekolah->pilihan_sekolah_id->entity->label(),
+		                                  '@kompetensi_keahlian_id' => $prodi_sekolah->kompetensi_keahlian_id->entity->label())));
+	  }
 	}
   }
 
